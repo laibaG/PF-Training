@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Number</title>
+</head>
+<body>
+    <h1>Square a Number</h1>
+    <form method="post" action="{{url_for('square_number')}}">
+        <label for="number">Enter a number:</label>
+        <input type="text" name="number" id="number">
+        <input type="submit" value="Square">
+    </form>
+    {% if number %}
+    <p>The squared number is: {{ number }}</p>
+    {% endif %}
+    {% if error %}
+    <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>

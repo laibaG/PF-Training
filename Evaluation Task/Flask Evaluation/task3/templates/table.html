@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Table</title>
+</head>
+<body>
+    <h1>Generate Table of a Given Number</h1>
+    <form method="post" action="{{url_for('generate_table')}}">
+        <label for="number">Enter a number:</label>
+        <input type="number" name="number" id="number">
+        <input type="submit" value="Generate">
+    </form>
+    {% if table %}
+    <p>Table of {{ number }}:</p>
+    <ul>
+        {% for result in table %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if error %}
+    <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>

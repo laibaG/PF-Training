@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image MD5 Hash</title>
+</head>
+<body>
+    <h1>Calculate MD5 Hash of an Image</h1>
+    <form method="post" enctype="multipart/form-data" action="{{url_for('image_md5')}}">
+        <input type="file" name="file">
+        <input type="submit" value="Calculate">
+    </form>
+    {% if md5_hash %}
+    <p>The MD5 hash of the image is: {{ md5_hash }}</p>
+    {% endif %}
+    {% if error %}
+    <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
